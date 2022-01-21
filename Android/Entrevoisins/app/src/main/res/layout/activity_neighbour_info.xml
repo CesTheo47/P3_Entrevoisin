@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="0dp"
+        android:layout_height="269dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="Name"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/myToggleButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="-24dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_star_border_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        tools:layout_editor_absoluteX="24dp">
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="My Name is"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_map_marker"
+            android:text="I live here" />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:text="Phone Number" />
+
+        <TextView
+            android:id="@+id/fb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_web"
+            android:text="Facbook" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infos_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bio_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="À propos de Moi"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Lorem ipsum dolor sit amet. Qui totam illum id distinctio ipsa vel fugiat voluptate. In aliquam veritatis aut nemo eos veniam tenetur ab deleniti enim eos harum quia vel iste deleniti ea maiores molestiae.
+            Et sint blanditiis est dicta illo ut error voluptate! A magnam voluptatem sit modi sint eum eius molestias aut quisquam perferendis sed voluptates doloribus et laudantium dolorem. Eum excepturi laudantium et distinctio consequuntur nam rerum architecto? Ex quasi adipisci eum deleniti voluptatem non blanditiis soluta ab repudiandae totam!
+            Eos nostrum tempore eum illo perferendis eos ipsam voluptatum sed dolores perferendis. Eum temporibus et totam fugit non quos autem est eaque ipsam."/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
