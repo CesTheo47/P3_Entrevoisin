@@ -20,6 +20,12 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         return neighbours;
     }
 
+    @Override
+    public Neighbour getNeighbour(long id) {
+        // implement logic - boolean
+        return null;
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -35,5 +41,20 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     @Override
     public void createNeighbour(Neighbour neighbour) {
         neighbours.add(neighbour);
+    }
+
+    @Override
+    public boolean isFavorite(Neighbour mNeighbour) {
+        return false;
+    }
+
+    @Override
+    public void removeFavorite(Neighbour mNeighbour) {
+
+    }
+
+    @Override
+    public void addFavorite(Neighbour mNeighbour) {
+
     }
 }

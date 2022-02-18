@@ -16,6 +16,8 @@ public interface NeighbourApiService {
      */
     List<Neighbour> getNeighbours();
 
+    Neighbour getNeighbour(long id);
+
     /**
      * Deletes a neighbour
      * @param neighbour
@@ -27,4 +29,10 @@ public interface NeighbourApiService {
      * @param neighbour
      */
     void createNeighbour(Neighbour neighbour);
+
+    boolean isFavorite(Neighbour mNeighbour);
+
+    void removeFavorite(Neighbour mNeighbour);
+
+    void addFavorite(Neighbour mNeighbour);
 }

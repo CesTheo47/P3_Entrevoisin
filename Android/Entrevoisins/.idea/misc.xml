@@ -8,6 +8,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../../layout/custom_preview.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/drawable/ic_cellphone_basic.xml" value="0.4197916666666667" />
@@ -20,9 +21,10 @@
         <entry key="app/src/main/res/drawable/ic_star_white_24dp.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/activity_add_neighbour.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_list_neighbour.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_neighbour_info.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_neighbour_info.xml" value="0.29347826086956524" />
         <entry key="app/src/main/res/layout/fragment_list_neighbour.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_neighbour.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_neighbour_item.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_neighbour_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/neighbour_info.xml" value="0.25" />
       </map>
