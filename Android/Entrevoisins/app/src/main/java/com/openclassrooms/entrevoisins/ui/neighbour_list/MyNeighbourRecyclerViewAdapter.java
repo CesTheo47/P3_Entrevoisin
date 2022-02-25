@@ -17,6 +17,7 @@ import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.ui.neighbour_details.NeighbourInfoActivity;
+import com.openclassrooms.entrevoisins.utils.Constants;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -61,6 +62,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), NeighbourInfoActivity.class);
+                intent.putExtra(Constants.NEIGHBOUR_ID_KEY, 10); // Passer la valeur en dynamique qui corres à l'id de l'utilisateur
                 v.getContext().startActivity(intent);
             }
         });

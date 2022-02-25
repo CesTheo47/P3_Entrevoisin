@@ -1,6 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_details;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+import com.openclassrooms.entrevoisins.utils.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,14 +47,12 @@ public class NeighbourInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neighbour_info);
+        ButterKnife.bind(this);
 
         mApiService = DI.getNeighbourApiService();
-    }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.activity_neighbour_info, container, false);
-        ButterKnife.bind(this, view);
+        Long id = getIntent().getExtras().getLong(Constants.NEIGHBOUR_ID_KEY);
+        mNeighbour = mApiService.getNeighbour(id);
 
         name.setText(mNeighbour.getName());
         name2.setText(mNeighbour.getName());
@@ -61,10 +61,9 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         phone.setText(mNeighbour.getPhoneNumber());
         about.setText(mNeighbour.getAboutMe());
 
-        return view;
     }
 
-    public void setFavoriteImg() {
+    /*public void setFavoriteImg() {
         ImageView fab_favorite = null;
         if (mApiService.isFavorite(mNeighbour)) {
             fab_favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_24dp));
@@ -85,6 +84,6 @@ public class NeighbourInfoActivity extends AppCompatActivity {
     }
 
     private Context getContext() {
-    }
+    }*/
 
 }
