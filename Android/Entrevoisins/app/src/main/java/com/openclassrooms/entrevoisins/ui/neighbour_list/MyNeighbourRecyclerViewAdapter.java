@@ -62,7 +62,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), NeighbourInfoActivity.class);
-                intent.putExtra(Constants.NEIGHBOUR_ID_KEY, 10); // Passer la valeur en dynamique qui corres à l'id de l'utilisateur
+                intent.putExtra(Constants.NEIGHBOUR_ID_KEY, neighbour.getId());
                 v.getContext().startActivity(intent);
             }
         });

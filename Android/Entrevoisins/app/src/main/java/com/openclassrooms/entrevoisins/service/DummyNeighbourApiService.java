@@ -49,7 +49,12 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.add(neighbour);
     }
 
-    /*@Override
+    @Override
+    public void changeFavoriteStatus(Neighbour neighbour) {
+
+    }
+
+    @Override
     public boolean isFavorite(Neighbour mNeighbour) {
         return false;
     }
@@ -62,5 +67,5 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     @Override
     public void addFavorite(Neighbour mNeighbour) {
 
-    }*/
+    }
 }

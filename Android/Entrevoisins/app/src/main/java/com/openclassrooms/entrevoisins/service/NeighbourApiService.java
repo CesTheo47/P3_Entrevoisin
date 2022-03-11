@@ -30,9 +30,11 @@ public interface NeighbourApiService {
      */
     void createNeighbour(Neighbour neighbour);
 
-    /*boolean isFavorite(Neighbour mNeighbour);
+    void changeFavoriteStatus(Neighbour neighbour);
+
+    boolean isFavorite(Neighbour mNeighbour);
 
     void removeFavorite(Neighbour mNeighbour);
 
-    void addFavorite(Neighbour mNeighbour);*/
+    void addFavorite(Neighbour mNeighbour);
 }

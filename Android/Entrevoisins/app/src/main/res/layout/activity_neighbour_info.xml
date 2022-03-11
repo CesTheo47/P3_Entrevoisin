@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <ImageView
         android:id="@+id/img_avatar"
         android:layout_width="0dp"
@@ -14,10 +16,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/design_default_color_surface"
         android:gravity="start"
         android:text="@string/app_name"
         android:textSize="40sp"
@@ -29,6 +42,7 @@
         android:id="@+id/fab_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/design_default_color_surface"
         android:layout_marginTop="-24dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_star_border_white_24dp"
@@ -40,10 +54,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/img_avatar"
-        tools:layout_editor_absoluteX="24dp">
+        tools:layout_editor_absoluteX="20dp">
 
         <TextView
             android:id="@+id/txt_name_info"
@@ -52,7 +66,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="My Name is"
-            android:textSize="30sp"/>
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txt_address_info"
@@ -97,6 +112,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="À propos de Moi"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="30sp"/>
 
         <TextView

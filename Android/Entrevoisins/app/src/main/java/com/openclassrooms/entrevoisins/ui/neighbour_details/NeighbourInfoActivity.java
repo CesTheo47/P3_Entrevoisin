@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
@@ -28,6 +31,8 @@ public class NeighbourInfoActivity extends AppCompatActivity {
     TextView name;
     @BindView(R.id.img_avatar)
     ImageView picture;
+    @BindView(R.id.fab_favorite)
+    FloatingActionButton favorite ;
     @BindView(R.id.txt_name_info)
     TextView name2;
     @BindView(R.id.txt_fb_info)
@@ -38,6 +43,9 @@ public class NeighbourInfoActivity extends AppCompatActivity {
     TextView phone;
     @BindView(R.id.txt_bio_description)
     TextView about;
+    @BindView(R.id.toolbar)
+    MaterialToolbar toolbar;
+
 
     private NeighbourApiService mApiService;
     protected Neighbour mNeighbour;
@@ -48,22 +56,30 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neighbour_info);
         ButterKnife.bind(this);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         mApiService = DI.getNeighbourApiService();
 
         Long id = getIntent().getExtras().getLong(Constants.NEIGHBOUR_ID_KEY);
         mNeighbour = mApiService.getNeighbour(id);
 
+        // Get profile info
         name.setText(mNeighbour.getName());
         name2.setText(mNeighbour.getName());
         social.setText("www.facebook.com/" + mNeighbour.getName());
         adress.setText(mNeighbour.getAddress());
         phone.setText(mNeighbour.getPhoneNumber());
         about.setText(mNeighbour.getAboutMe());
+        Glide.with(this).load(mNeighbour.getAvatarUrl()).centerCrop().into(picture);
 
     }
 
-    /*public void setFavoriteImg() {
+    public void setFavoriteImg() {
         ImageView fab_favorite = null;
         if (mApiService.isFavorite(mNeighbour)) {
             fab_favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_24dp));
@@ -72,18 +88,14 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         }
     }
 
-    public void setFabFavorite() {
-        if (mApiService.isFavorite(mNeighbour)) {
-            mApiService.removeFavorite(mNeighbour);
-            Toast.makeText(this.getContext(), R.string.toast_not_fav, Toast.LENGTH_SHORT).show();
-        } else {
-            mApiService.addFavorite(mNeighbour);
-            Toast.makeText(this.getContext(), R.string.toast_fav, Toast.LENGTH_SHORT).show();
-        }
-        setFavoriteImg();
-    }
-
-    private Context getContext() {
-    }*/
-
+  // public void setFabFavorite() {
+  //     if (mApiService.isFavorite(mNeighbour)) {
+  //         mApiService.removeFavorite(mNeighbour);
+  //         Toast.makeText(this.getContext(), R.string.toast_not_fav, Toast.LENGTH_SHORT).show();
+  //     } else {
+  //         mApiService.addFavorite(mNeighbour);
+  //         Toast.makeText(this.getContext(), R.string.toast_fav, Toast.LENGTH_SHORT).show();
+  //     }
+  //     setFavoriteImg();
+  // }
 }
