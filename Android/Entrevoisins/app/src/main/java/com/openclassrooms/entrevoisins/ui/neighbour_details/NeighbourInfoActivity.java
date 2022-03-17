@@ -76,26 +76,26 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         phone.setText(mNeighbour.getPhoneNumber());
         about.setText(mNeighbour.getAboutMe());
         Glide.with(this).load(mNeighbour.getAvatarUrl()).centerCrop().into(picture);
+        setFavoriteImg();
 
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "text", Toast.LENGTH_LONG ).show();
+                mApiService.changeFavoriteStatus(mNeighbour);
+                setFavoriteImg();
+            }
+
+        });
     }
 
     public void setFavoriteImg() {
-        ImageView fab_favorite = null;
-        if (mApiService.isFavorite(mNeighbour)) {
-            fab_favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_24dp));
+        if (mNeighbour.isFavorite()) {
+            favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_24dp));
         } else {
-            fab_favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_border_white_24dp));
+            favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_border_white_24dp));
         }
+
     }
 
-  // public void setFabFavorite() {
-  //     if (mApiService.isFavorite(mNeighbour)) {
-  //         mApiService.removeFavorite(mNeighbour);
-  //         Toast.makeText(this.getContext(), R.string.toast_not_fav, Toast.LENGTH_SHORT).show();
-  //     } else {
-  //         mApiService.addFavorite(mNeighbour);
-  //         Toast.makeText(this.getContext(), R.string.toast_fav, Toast.LENGTH_SHORT).show();
-  //     }
-  //     setFavoriteImg();
-  // }
 }

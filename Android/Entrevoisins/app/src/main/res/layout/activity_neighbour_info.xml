@@ -46,6 +46,7 @@
         android:layout_marginTop="-24dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_star_border_white_24dp"
+        app:tint="#E5E514"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_avatar" />
 

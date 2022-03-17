@@ -16,7 +16,7 @@ public class Neighbour {
     /** Avatar */
     private String avatarUrl;
 
-    /** Adress */
+    /** Address */
     private String address;
 
     /** Phone number */
@@ -92,11 +92,11 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
-    public Boolean getIsFavorite() {
+    public Boolean isFavorite() {
         return this.isFavorite;
     }
 
-    public void setIsFavorite(Boolean isFavorite) {
+    public void setFavorite(Boolean isFavorite) {
         this.isFavorite = isFavorite;
     }
 

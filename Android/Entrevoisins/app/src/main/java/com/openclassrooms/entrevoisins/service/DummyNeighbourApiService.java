@@ -51,6 +51,15 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     @Override
     public void changeFavoriteStatus(Neighbour neighbour) {
+        for (Neighbour n : neighbours) {
+            if (n.getId() == neighbour.getId() ){
+                if (n.isFavorite() ) {
+                    n.setFavorite(false);
+                } else {
+                    n.setFavorite(true);
+                }
+            }
+        }
 
     }
 
