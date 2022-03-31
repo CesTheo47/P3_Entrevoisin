@@ -32,7 +32,7 @@ public class NeighbourInfoActivity extends AppCompatActivity {
     @BindView(R.id.img_avatar)
     ImageView picture;
     @BindView(R.id.fab_favorite)
-    FloatingActionButton favorite ;
+    FloatingActionButton favorite;
     @BindView(R.id.txt_name_info)
     TextView name2;
     @BindView(R.id.txt_fb_info)
@@ -81,7 +81,6 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "text", Toast.LENGTH_LONG ).show();
                 mApiService.changeFavoriteStatus(mNeighbour);
                 setFavoriteImg();
             }

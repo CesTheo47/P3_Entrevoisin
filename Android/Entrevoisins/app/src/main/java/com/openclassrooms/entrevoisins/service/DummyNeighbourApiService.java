@@ -2,12 +2,13 @@ package com.openclassrooms.entrevoisins.service;
 
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Dummy mock for the Api
  */
-public class DummyNeighbourApiService implements  NeighbourApiService {
+public class DummyNeighbourApiService implements NeighbourApiService {
 
     private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
 
@@ -24,7 +25,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     public Neighbour getNeighbour(long id) {
         // implement logic - boolean
         for (Neighbour n : neighbours) {
-            if (n.getId() == id ){
+            if (n.getId() == id) {
                 return n;
             }
         }
@@ -42,6 +43,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     /**
      * {@inheritDoc}
+     *
      * @param neighbour
      */
     @Override
@@ -49,32 +51,26 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.add(neighbour);
     }
 
+
+    @Override
+    public List<Neighbour> getFavoriteNeighbours() {
+        List<Neighbour> favoritList = new ArrayList<>();
+        for (Neighbour n : neighbours) {
+            if (n.isFavorite()) {
+                favoritList.add(n);
+            }
+
+        }
+        return favoritList;
+    }
+
     @Override
     public void changeFavoriteStatus(Neighbour neighbour) {
         for (Neighbour n : neighbours) {
-            if (n.getId() == neighbour.getId() ){
-                if (n.isFavorite() ) {
-                    n.setFavorite(false);
-                } else {
-                    n.setFavorite(true);
-                }
+            if (n.getId() == neighbour.getId()) {
+                n.setFavorite(!n.isFavorite());
             }
         }
-
     }
 
-    @Override
-    public boolean isFavorite(Neighbour mNeighbour) {
-        return false;
-    }
-
-    @Override
-    public void removeFavorite(Neighbour mNeighbour) {
-
-    }
-
-    @Override
-    public void addFavorite(Neighbour mNeighbour) {
-
-    }
 }
