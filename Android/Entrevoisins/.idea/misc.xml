@@ -24,6 +24,8 @@
         <entry key="app/src/main/res/layout/activity_add_neighbour.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_list_neighbour.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_neighbour_info.xml" value="0.29347826086956524" />
+        <entry key="app/src/main/res/layout/fragment_favorite_neighbour.xml" value="0.1453804347826087" />
+        <entry key="app/src/main/res/layout/fragment_favorite_neighbour_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_list_neighbour.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_neighbour.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_neighbour_item.xml" value="0.33" />
