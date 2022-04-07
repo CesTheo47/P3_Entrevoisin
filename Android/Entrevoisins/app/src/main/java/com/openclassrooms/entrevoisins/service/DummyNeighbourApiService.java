@@ -23,7 +23,6 @@ public class DummyNeighbourApiService implements NeighbourApiService {
 
     @Override
     public Neighbour getNeighbour(long id) {
-        // implement logic - boolean
         for (Neighbour n : neighbours) {
             if (n.getId() == id) {
                 return n;

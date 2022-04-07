@@ -3,6 +3,8 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import androidx.test.espresso.DataInteraction;
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.contrib.RecyclerViewActions;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
@@ -22,6 +24,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.*;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
+import com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion;
+import com.openclassrooms.entrevoisins.utils.RecyclerViewUtils;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -43,14 +48,17 @@ public class AddFavoriteNeighbourTest {
     public ActivityTestRule<ListNeighbourActivity> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity.class);
 
     @Test
-    public void addFavoriteNeighbourTest() {
+    public void AddFavoriteNeighbourTest() {
+        // on click sur le neighbour - fiche détail du neighbour
         ViewInteraction recyclerView = onView(
                 allOf(withId(R.id.list_neighbours),
                         withParent(withId(R.id.container))));
         recyclerView.perform(actionOnItemAtPosition(0, click()));
 
-
+        // on L'ajoute au favoris
         onView(withId(R.id.fab_favorite)).perform(click());
+
+        // click flèche retour
 
         ViewInteraction appCompatImageButton = onView(
                 allOf(childAtPosition(
@@ -62,9 +70,10 @@ public class AddFavoriteNeighbourTest {
                         isDisplayed()));
         appCompatImageButton.perform(click());
 
-        onView(withId(R.id.toolbar)).perform(click());
+        // onView(withId(R.id.toolbar)).perform(click());
 
 
+        // click list favoris
         ViewInteraction tabView = onView(
                 allOf(withContentDescription("Favorites"),
                         childAtPosition(
@@ -75,11 +84,17 @@ public class AddFavoriteNeighbourTest {
                         isDisplayed()));
         tabView.perform(click());
 
+
+        onView(withId(R.id.favlist_neighbours)).check(new RecyclerViewUtils.ItemCount(1));
+
+
+        // click sur le favoris
         ViewInteraction recyclerView2 = onView(
                 allOf(withId(R.id.favlist_neighbours),
                         withParent(withId(R.id.container))));
         recyclerView2.perform(actionOnItemAtPosition(0, click()));
 
+        // star déselection
         ViewInteraction floatingActionButton2 = onView(
                 allOf(withId(R.id.fab_favorite),
                         childAtPosition(
@@ -90,6 +105,7 @@ public class AddFavoriteNeighbourTest {
                         isDisplayed()));
         floatingActionButton2.perform(click());
 
+        // click flèche retour
         ViewInteraction appCompatImageButton2 = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.toolbar),
@@ -100,7 +116,10 @@ public class AddFavoriteNeighbourTest {
                         isDisplayed()));
         appCompatImageButton2.perform(click());
 
+        onView(withId(R.id.favlist_neighbours)).check(new RecyclerViewUtils.ItemCount(0));
 
+
+        // click liste des neighbour
         ViewInteraction tabView2 = onView(
                 allOf(withContentDescription("My neighbours"),
                         childAtPosition(
@@ -111,6 +130,8 @@ public class AddFavoriteNeighbourTest {
                         isDisplayed()));
         tabView2.perform(click());
     }
+
+
 
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
