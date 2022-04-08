@@ -23,6 +23,7 @@ import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.utils.RecyclerViewUtils;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -52,6 +53,8 @@ public class AddNeighbourTest {
         onView(withId(R.id.aboutMe)).perform(replaceText("Je suis Theo"));
 
         onView(withId(R.id.create)).perform(click());
+
+        onView(withId(R.id.list_neighbours)).check(new RecyclerViewUtils.ItemCount(13));
 
     }
 
