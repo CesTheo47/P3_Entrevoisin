@@ -48,7 +48,7 @@ public class AddFavoriteNeighbourTest {
     public ActivityTestRule<ListNeighbourActivity> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity.class);
 
     @Test
-    public void AddFavoriteNeighbourTest() {
+    public void myFavoriteNeighbourList_addAction_shouldAddFavorite() {
         // on click sur le neighbour - fiche détail du neighbour
         ViewInteraction recyclerView = onView(
                 allOf(withId(R.id.list_neighbours),

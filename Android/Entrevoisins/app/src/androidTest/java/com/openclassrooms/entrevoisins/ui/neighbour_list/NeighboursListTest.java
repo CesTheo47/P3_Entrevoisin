@@ -1,14 +1,18 @@
 
-package com.openclassrooms.entrevoisins.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
+import com.openclassrooms.entrevoisins.utils.RecyclerViewUtils;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -70,4 +74,26 @@ public class NeighboursListTest {
         // Then : the number of element is 11
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
+
+    @Test
+    public void myNeighbourList_addAction_shouldAddItem() {
+
+        onView(withId(R.id.add_neighbour)).perform(click());
+
+        onView(withId(R.id.name)).perform(replaceText("Theo"));
+
+        onView(withId(R.id.phoneNumber)).perform(replaceText("0611545558"));
+
+        onView(withId(R.id.address)).perform(replaceText("3 rue du port"));
+
+        onView(withId(R.id.aboutMe)).perform(replaceText("Je suis Theo"));
+
+        onView(withId(R.id.create)).perform(click());
+
+        ITEMS_COUNT += 1;
+
+        onView(withId(R.id.list_neighbours)).check(new RecyclerViewUtils.ItemCount(ITEMS_COUNT));
+
+    }
+
 }

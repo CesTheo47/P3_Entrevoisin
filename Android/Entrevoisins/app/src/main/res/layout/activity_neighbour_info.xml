@@ -51,87 +51,99 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_avatar" />
 
-    <LinearLayout
-        android:id="@+id/linear_info"
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/card_info"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@id/img_avatar"
+       android:layout_margin="20dp"
+       android:layout_marginTop="20dp"
+       app:cardBackgroundColor="#ffff"
+       app:cardCornerRadius="4dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="5dp"
+           android:orientation="vertical">
+
+           <TextView
+               android:id="@+id/txt_name_info"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:text="My Name is"
+               android:textColor="@color/cardview_dark_background"
+               android:textSize="30sp" />
+
+           <TextView
+               android:id="@+id/txt_address_info"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               android:drawableLeft="@drawable/ic_map_marker"
+               android:text="I live here" />
+
+           <TextView
+               android:id="@+id/txt_phone_info"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               android:drawableLeft="@drawable/ic_phone"
+               android:text="Phone Number" />
+
+           <TextView
+               android:id="@+id/txt_fb_info"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               android:drawableLeft="@drawable/ic_web"
+               android:text="Facbook" />
+
+       </LinearLayout>
+   </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
-        android:background="#ffffff"
-        app:circularflow_radiusInDP="5dp"
+        app:cardBackgroundColor="#ffff"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card_info">
 
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/img_avatar"
-        tools:layout_editor_absoluteX="20dp">
-
-        <TextView
-            android:id="@+id/txt_name_info"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="My Name is"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="30sp" />
+            android:padding="5dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txt_address_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/ic_map_marker"
-            android:text="I live here" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="À propos de Moi"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="30sp"/>
 
-        <TextView
-            android:id="@+id/txt_phone_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/ic_phone"
-            android:text="Phone Number" />
-
-        <TextView
-            android:id="@+id/txt_fb_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/ic_web"
-            android:text="Facbook" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        android:background="#ffffff"
-        app:layout_constraintTop_toBottomOf="@id/linear_info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="À propos de Moi"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="30sp"/>
-
-        <TextView
-            android:id="@+id/txt_bio_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Lorem ipsum dolor sit amet. Qui totam illum id distinctio ipsa vel fugiat voluptate. In aliquam veritatis aut nemo eos veniam tenetur ab deleniti enim eos harum quia vel iste deleniti ea maiores molestiae.
-            Et sint blanditiis est dicta illo ut error voluptate! A magnam voluptatem sit modi sint eum eius molestias aut quisquam perferendis sed voluptates doloribus et laudantium dolorem. Eum excepturi laudantium et distinctio consequuntur nam rerum architecto? Ex quasi adipisci eum deleniti voluptatem non blanditiis soluta ab repudiandae totam!
-            Eos nostrum tempore eum illo perferendis eos ipsam voluptatum sed dolores perferendis. Eum temporibus et totam fugit non quos autem est eaque ipsam."/>
+            <TextView
+                android:id="@+id/txt_bio_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Lorem ipsum dolor sit amet. Qui totam illum id distinctio ipsa vel fugiat voluptate. In aliquam veritatis aut nemo eos veniam tenetur ab deleniti enim eos harum quia vel iste deleniti ea maiores molestiae.
+            Et sint ."/>
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
