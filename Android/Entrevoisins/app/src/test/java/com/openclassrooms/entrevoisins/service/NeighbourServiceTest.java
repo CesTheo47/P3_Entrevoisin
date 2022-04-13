@@ -51,8 +51,6 @@ public class NeighbourServiceTest {
     }
 
 
-    // Test des favoris
-
     @Test
     public void addFavoriteWithSuccess() {
         Neighbour neighbouradd = service.getNeighbours().get(0);

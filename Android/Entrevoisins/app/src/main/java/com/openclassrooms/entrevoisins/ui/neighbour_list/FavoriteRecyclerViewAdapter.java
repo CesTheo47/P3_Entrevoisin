@@ -50,7 +50,6 @@ public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRe
                 .into(holder.mNeighbourAvatar);
 
 
-        // holder to go to Profile
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

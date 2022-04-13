@@ -68,7 +68,6 @@ public class NeighbourInfoActivity extends AppCompatActivity {
         Long id = getIntent().getExtras().getLong(Constants.NEIGHBOUR_ID_KEY);
         mNeighbour = mApiService.getNeighbour(id);
 
-        // Get profile info
         name.setText(mNeighbour.getName());
         name2.setText(mNeighbour.getName());
         social.setText("www.facebook.com/" + mNeighbour.getName());
