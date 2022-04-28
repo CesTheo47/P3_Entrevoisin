@@ -34,8 +34,7 @@ public class FavoriteFragment extends Fragment {
      * @return @{@link NeighbourFragment}
      */
     public static FavoriteFragment newInstance() {
-         FavoriteFragment fragment = new FavoriteFragment();
-        return fragment;
+        return new FavoriteFragment();
     }
 
     @Override
